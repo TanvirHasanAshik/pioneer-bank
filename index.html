@@ -8,10 +8,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="text-center">Welcome to Pioneer Bank</h1>
+    
+    <section id="enterPage">
+        <h1 class="text-center">Welcome to Pioneer Bank</h1>
+        <section class="form">
+            <h4>Login:</h4>
+            <input type="email" class="form-control" name="" id="" placeholder="Enter your email address"><br>
+            <input type="password" class="form-control" name="" id="" placeholder="Enter your password"><br>
+            <button id="login" class="btn btn-success">Enter</button>
+        </section>
+    </section>
+    <section id="trenjection">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="deposit card">
+                    <h5>Deposit</h5>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="withdraw card">
+                    <h5>Withdraw</h5>
+                    <h2>$00</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="balance card">
+                    <h5>Balance</h5>
+                    <h2>$1200</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-6">
+                <div class="cal">
+                    <h4>Deposit</h4>
+                    <input class="form-control" type="text" name="" id="depositAmount" placeholder="Deposit money">
+                    <br><button id="deposit" class="btn btn-success">Deposit</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="cal">
+                    <h4>Withdraw</h4>
+                    <input class="form-control" type="text" name="" id="" placeholder="withdraw money">
+                    <br><button class="btn btn-success">Withdraw</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        const taranjection = document.getElementById("trenjection");
+        taranjection.style.display = "none";
+        const loginbtn = document.getElementById("login");
+        loginbtn.addEventListener("click", function(){
+            const enterPage = document.getElementById("enterPage");
+            enterPage.style.display = "none";
+            taranjection.style.display = "block";
+        });
+        const depositAmount = document.getElementById("deposit");
+        depositAmount.addEventListener('click', function(){
+            const deposit = document.getElementById("depositAmount").Value;
+            var amount = parseFloat(deposit);
+        });
+    </script>
 </body>
 </html>

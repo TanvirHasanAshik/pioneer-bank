@@ -1,3 +1,33 @@
 body{
     padding: 150px;
 }
+.form{
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 8px 5px  rgb(187, 186, 186);
+}
+.deposit{
+    background-color: rgb(63, 32, 92);
+}
+.withdraw{
+    background-color: rgb(12, 122, 8);
+}
+.balance{
+    background-color: rgb(5, 68, 119);
+}
+.card{
+    margin: 0 20px;
+    padding: 20px 0px;
+    color: wheat;
+    text-align: center;
+    border-radius: 5px;
+}
+.cal{
+    padding: 50px;
+    box-shadow: 5px 5px 5px 5px rgb(207, 203, 203);
+    border-radius: 10px;
+}
+#trenjection .row{
+    margin-bottom: 50px;
+}
