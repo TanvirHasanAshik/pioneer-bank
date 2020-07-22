@@ -23,7 +23,7 @@
             <div class="col-md-4">
                 <div class="deposit card">
                     <h5>Deposit</h5>
-                    <h2>$00</h2>
+                    <h2>$<span id="currentDeposit">00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
@@ -35,7 +35,7 @@
             <div class="col-md-4">
                 <div class="balance card">
                     <h5>Balance</h5>
-                    <h2>$1200</h2>
+                    <h2>$ <span id="currentBalance">1200</span></h2>
                 </div>
             </div>
         </div>
@@ -43,21 +43,22 @@
             <div class="col-md-6">
                 <div class="cal">
                     <h4>Deposit</h4>
-                    <input class="form-control" type="text" name="" id="depositAmount" placeholder="Deposit money">
-                    <br><button id="deposit" class="btn btn-success">Deposit</button>
+                    <input  id="depositAmount" class="form-control" type="text" name="" placeholder="Deposit money">
+                    <br><button id="addDeposit" class="btn btn-success">Deposit</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="cal">
                     <h4>Withdraw</h4>
                     <input class="form-control" type="text" name="" id="" placeholder="withdraw money">
-                    <br><button class="btn btn-success">Withdraw</button>
+                    <br><button id="withdraw" class="btn btn-success">Withdraw</button>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
+        //login...............................
         const taranjection = document.getElementById("trenjection");
         taranjection.style.display = "none";
         const loginbtn = document.getElementById("login");
@@ -66,11 +67,24 @@
             enterPage.style.display = "none";
             taranjection.style.display = "block";
         });
-        const depositAmount = document.getElementById("deposit");
-        depositAmount.addEventListener('click', function(){
-            const deposit = document.getElementById("depositAmount").Value;
-            var amount = parseFloat(deposit);
-        });
+
+        //deposit amount......................
+       const depositBtn = document.getElementById("addDeposit");
+       depositBtn.addEventListener("click", function(){
+            const depositAmount = document.getElementById("depositAmount").value;
+            const depositNumber = parseFloat(depositAmount);
+
+            updateSpanText("currentDeposit", depositNumber);
+            updateSpanText("currentBalance", depositNumber);
+            document.getElementById("depositAmount").value = ""; 
+       })
+
+       function updateSpanText(id, depositNumber){
+            const currentBalance = document.getElementById(id).innerText;
+            const currentBalanceNumber = parseFloat(currentBalance);
+            const totalBalance = depositNumber + currentBalanceNumber;
+            document.getElementById(id).innerText = totalBalance;
+       }
     </script>
 </body>
 </html>
