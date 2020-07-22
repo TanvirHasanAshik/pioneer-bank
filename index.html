@@ -87,7 +87,7 @@
 
             updateSpanText("currentWithdraw", withdrawNumber);
             updateSpanText("currentBalance", -1 * withdrawNumber);
-
+            document.getElementById("withdrawAmount").value = ""; 
        })
        function inputText(id){
             const inputAmount = document.getElementById(id).value;
